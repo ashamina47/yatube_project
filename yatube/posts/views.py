@@ -11,18 +11,17 @@ def index(request):
         'posts': posts,
         'title': title,
     }
-    return render(request, template, context) 
+    return render(request, template, context)
 
 
-def group_list(request):
+def group_list(request, slug):
     template = 'posts/group_list.html'
-    group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
     content = ("Здесь будет информация о группах проекта Yatube")
     context = {
         'content': content,
     }
     return render(request, template, context)
+
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
@@ -32,4 +31,3 @@ def group_posts(request, slug):
         'posts': posts,
     }
     return render(request, 'posts/group_list.html', context)
-

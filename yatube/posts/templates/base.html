@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
   <head>    
@@ -13,7 +14,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Подключен файл со стандартными стилями бустрап -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>{%block head_title %} {{ title }} {% endblock %}</title>
+    <title>{%block head_title %}{% endblock %}</title>
   </head>
   <body>
     <header>
