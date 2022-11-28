@@ -11,13 +11,11 @@ class Group(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.title
-    
+        return self.group
+
     class Meta:
         verbose_name = 'Группy'
         verbose_name_plural = 'Группы'
-    
-    
 
 
 class Post(models.Model):
@@ -34,3 +32,6 @@ class Post(models.Model):
                               null=True,
                               on_delete=models.CASCADE,
                               related_name='posts')
+
+    def __str__(self):
+        return self.title
